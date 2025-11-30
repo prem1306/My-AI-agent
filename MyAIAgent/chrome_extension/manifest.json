@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Google Explainer Agent",
+    "version": "1.0",
+    "description": "Explains highlighted text using a Local AI Agent.",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "contextMenus",
+        "storage"
+    ],
+    "host_permissions": [
+        "http://localhost:8000/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "Explain Text"
+    }
+}

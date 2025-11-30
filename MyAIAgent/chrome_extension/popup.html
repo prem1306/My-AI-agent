@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            width: 200px;
+            padding: 10px;
+            font-family: sans-serif;
+        }
+
+        h3 {
+            color: #4285f4;
+            margin: 0 0 10px 0;
+        }
+
+        p {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .history-container {
+            margin-top: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        .history-item {
+            margin-bottom: 8px;
+            padding: 5px;
+            background: #f8f9fa;
+            border-radius: 4px;
+        }
+
+        .query {
+            font-size: 11px;
+            color: #333;
+            font-style: italic;
+        }
+
+        .timestamp {
+            font-size: 10px;
+            color: #999;
+            margin-top: 2px;
+        }
+
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Google Explainer</h3>
+    <p>Status: <span class="status">Active</span></p>
+    <p>Highlight text and press <strong>Shift+E</strong> to explain.</p>
+
+    <div class="history-container">
+        <h4>Recent History</h4>
+        <div id="history-list">Loading...</div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

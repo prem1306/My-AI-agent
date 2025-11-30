@@ -1,0 +1,63 @@
+2025-11-28 20:05:09,987 - Agent.GoogleExplainer - WARNING - GOOGLE_API_KEY not found. Explainer will run in mock mode.
+2025-11-28 20:05:09,988 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:08:14,780 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:08:16,247 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:10:28,466 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:11:14,780 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:11:31,131 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:11:48,512 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:12:05,061 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:12:34,142 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:12:52,944 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:13:12,029 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:22:11,924 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:24:17,863 - AgentServer - INFO - Received explanation request for text length: 314
+2025-11-28 20:24:17,864 - MainAgent - INFO - Routing task to GoogleExplainer
+2025-11-28 20:26:29,721 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:28:12,194 - AgentServer - INFO - Received explanation request for text length: 98
+2025-11-28 20:28:12,195 - MainAgent - INFO - Routing task to GoogleExplainer
+2025-11-28 20:28:56,617 - AgentServer - INFO - Received explanation request for text length: 377
+2025-11-28 20:28:56,617 - MainAgent - INFO - Routing task to GoogleExplainer
+2025-11-28 20:32:51,917 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:43:13,132 - AgentServer - INFO - Received explanation request for text length: 377
+2025-11-28 20:43:13,144 - MainAgent - INFO - Routing task to GoogleExplainer
+2025-11-28 20:45:30,517 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:46:52,125 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:48:07,671 - AgentServer - INFO - Received explanation request for text length: 495
+2025-11-28 20:48:07,671 - MainAgent - INFO - Routing task to GoogleExplainer
+2025-11-28 20:48:24,451 - AgentServer - INFO - Received command: open notepad
+2025-11-28 20:48:24,451 - SystemTools - WARNING - Command blocked: notepad
+2025-11-28 20:48:34,647 - AgentServer - INFO - Received command: "open notepad"
+2025-11-28 20:48:43,551 - AgentServer - INFO - Received command: create folder foo
+2025-11-28 20:49:34,240 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:49:50,371 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:51:55,134 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:52:09,341 - AgentServer - INFO - Received command: open notepad
+2025-11-28 20:52:09,342 - SystemTools - WARNING - Command blocked: notepad
+2025-11-28 20:52:44,621 - AgentServer - INFO - Received explanation request for text length: 377
+2025-11-28 20:52:44,622 - MainAgent - INFO - Routing task to GoogleExplainer
+2025-11-28 20:52:56,406 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:53:00,484 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:53:10,003 - AgentServer - INFO - Received explanation request for text length: 377
+2025-11-28 20:53:10,004 - MainAgent - INFO - Routing task to GoogleExplainer
+2025-11-28 20:53:33,361 - AgentServer - INFO - Received explanation request for text length: 532
+2025-11-28 20:53:33,362 - MainAgent - INFO - Routing task to GoogleExplainer
+2025-11-28 20:54:02,002 - AgentServer - INFO - Received command: open notepad
+2025-11-28 20:56:04,905 - AgentServer - INFO - Received command: open notepad
+2025-11-28 20:57:21,277 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 20:57:36,154 - AgentServer - INFO - Received command: open notepad
+2025-11-28 20:57:53,069 - AgentServer - INFO - Received command: open PowerPoint
+2025-11-28 20:57:59,514 - AgentServer - INFO - Received command: open calc
+2025-11-28 20:58:08,666 - AgentServer - INFO - Received command: open explorer
+2025-11-28 20:58:20,077 - AgentServer - INFO - Received command: open calc
+2025-11-28 21:10:21,819 - Database - INFO - Database initialized.
+2025-11-28 21:10:21,821 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 21:10:53,428 - Database - INFO - Database initialized.
+2025-11-28 21:10:53,429 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 21:11:58,942 - Database - INFO - Database initialized.
+2025-11-28 21:11:58,943 - MainAgent - INFO - Registered agent: GoogleExplainer
+2025-11-28 21:12:15,585 - AgentServer - INFO - Received explanation request for text length: 686
+2025-11-28 21:12:15,586 - MainAgent - INFO - Routing task to GoogleExplainer
+2025-11-28 21:12:27,315 - AgentServer - INFO - Received explanation request for text length: 1096
+2025-11-28 21:12:27,315 - MainAgent - INFO - Routing task to GoogleExplainer
+2025-11-28 21:12:45,995 - AgentServer - INFO - Received command: open calc
