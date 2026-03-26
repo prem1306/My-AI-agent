@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+google-generativeai
+pydantic
+requests
+python-dotenv
+rich
+keyboard
+pyperclip

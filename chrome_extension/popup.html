@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AI Agent Suite</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            width: 280px;
+            font-family: 'Google Sans', Roboto, Arial, sans-serif;
+            background: #0f0f1a;
+            color: #e2e2e2;
+            user-select: none;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 14px 16px;
+            border-bottom: 1px solid #2d2d4e;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .header-icon {
+            width: 32px; height: 32px;
+            background: linear-gradient(135deg, #4285F4, #7c3aed);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px;
+        }
+        .header-text h1 {
+            font-size: 14px; font-weight: 700; color: #fff;
+        }
+        .header-text p {
+            font-size: 10px; color: #888; margin-top: 1px;
+        }
+
+        /* Server Status */
+        .status-bar {
+            display: flex; align-items: center; gap: 8px;
+            padding: 10px 16px;
+            background: #16213e;
+            border-bottom: 1px solid #2d2d4e;
+            font-size: 12px;
+        }
+        .status-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: #888;
+            transition: background 0.4s;
+        }
+        .status-dot.online  { background: #4ade80; box-shadow: 0 0 6px #4ade80; }
+        .status-dot.offline { background: #f87171; box-shadow: 0 0 6px #f87171; }
+        .status-label { color: #aaa; }
+        .status-agents { margin-left: auto; color: #7ec8e3; font-size: 11px; }
+
+        /* Shortcuts */
+        .shortcuts {
+            padding: 12px 16px;
+            display: flex; flex-direction: column; gap: 6px;
+        }
+        .shortcut-row {
+            display: flex; align-items: center; gap: 10px;
+            padding: 8px 10px;
+            background: #1a1a2e;
+            border: 1px solid #2d2d4e; border-radius: 8px;
+            font-size: 12px; cursor: default;
+            transition: border-color 0.2s;
+        }
+        .shortcut-row:hover { border-color: #4285F4; }
+        .shortcut-icon { font-size: 16px; }
+        .shortcut-text { flex: 1; color: #ccc; }
+        kbd {
+            background: #2d2d4e; color: #7ec8e3;
+            padding: 2px 6px; border-radius: 4px;
+            font-size: 10px; font-family: monospace; font-weight: 700;
+        }
+
+        /* History */
+        .section-title {
+            padding: 10px 16px 4px;
+            font-size: 10px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px;
+            color: #555; border-top: 1px solid #2d2d4e;
+        }
+        #history-list {
+            padding: 0 16px 12px;
+            display: flex; flex-direction: column; gap: 5px;
+            max-height: 180px; overflow-y: auto;
+        }
+        .history-item {
+            padding: 6px 10px;
+            background: #16213e;
+            border: 1px solid #2d2d4e;
+            border-radius: 6px; font-size: 11px; color: #ccc;
+        }
+        .history-item .agent-badge {
+            font-size: 9px; color: #7ec8e3;
+            background: #2d2d4e; padding: 1px 6px; border-radius: 8px;
+            margin-right: 6px; font-weight: 600;
+        }
+        .history-item .ts { color: #555; font-size: 10px; display: block; margin-top: 2px; }
+        .history-empty { color: #555; font-size: 12px; padding: 8px 0; }
+
+        /* Footer */
+        .footer {
+            padding: 10px 16px;
+            border-top: 1px solid #2d2d4e;
+            background: #0f0f1a;
+        }
+        .open-chat-btn {
+            width: 100%; padding: 8px;
+            background: linear-gradient(135deg, #4285F4, #7c3aed);
+            border: none; border-radius: 8px;
+            color: #fff; font-size: 12px; font-weight: 600;
+            cursor: pointer; transition: opacity 0.2s;
+        }
+        .open-chat-btn:hover { opacity: 0.85; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-icon">🤖</div>
+        <div class="header-text">
+            <h1>AI Agent Suite</h1>
+            <p>Powered by Gemini</p>
+        </div>
+    </div>
+
+    <div class="status-bar">
+        <div class="status-dot" id="status-dot"></div>
+        <span class="status-label" id="status-label">Checking...</span>
+        <span class="status-agents" id="status-agents"></span>
+    </div>
+
+    <div class="shortcuts">
+        <div class="shortcut-row">
+            <span class="shortcut-icon">✨</span>
+            <span class="shortcut-text">Explain selected text</span>
+            <kbd>Shift+E</kbd>
+        </div>
+        <div class="shortcut-row">
+            <span class="shortcut-icon">📋</span>
+            <span class="shortcut-text">Summarize selected text</span>
+            <kbd>Shift+S</kbd>
+        </div>
+        <div class="shortcut-row">
+            <span class="shortcut-icon">⌨️</span>
+            <span class="shortcut-text">Command Center</span>
+            <kbd>Ctrl+Shift+Q</kbd>
+        </div>
+    </div>
+
+    <div class="section-title">Recent Activity</div>
+    <div id="history-list"><span class="history-empty">No history yet.</span></div>
+
+    <div class="footer">
+        <button class="open-chat-btn" id="open-chat">Open Chat Interface</button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
